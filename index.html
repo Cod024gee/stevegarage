@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KF Garage | Mobile Mechanic & Car Detailing Nairobi</title>
+    <meta name="description" content="KF Garage — Nairobi's #1 mobile garage. Professional mechanic services & premium car detailing brought to your home, office, or preferred location in Westlands, Karen, Kitusuru & Mombasa Road.">
+    <meta name="keywords" content="mobile garage Nairobi, mobile mechanic Nairobi, car detailing Nairobi, mobile car wash Nairobi, KF Garage, mechanic Westlands, car detailing Karen, mobile garage Kitusuru, mobile mechanic Mombasa Road">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-deep-black: #0D0D0F;
+            --color-steel-grey: #3A3F44;
+            --color-amber: #FF7A29;
+            --color-amber-dark: #E86A1A;
+            --color-amber-light: #FF9A55;
+            --color-chrome: #C9CDD3;
+            --color-chrome-light: #E4E6EA;
+            --color-electric-blue: #1A73E8;
+            --color-electric-blue-dark: #1557B0;
+            --color-signal-green: #2ECC71;
+            --color-white: #F5F5F6;
+            --color-off-white: #EAEBED;
+            --color-dark-card: #141417;
+            --color-dark-border: #26282D;
+            --color-dark-hover: #1A1A1E;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --shadow-amber: 0 4px 20px rgba(255, 122, 41, 0.3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --max-width: 1280px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-deep-black);
+            color: var(--color-off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+        }
+        h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+        }
+        h3 {
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            font-weight: 700;
+        }
+        p {
+            color: var(--color-chrome);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .section-padding {
+            padding: 5rem 0;
+        }
+        .section-padding-lg {
+            padding: 7rem 0;
+        }
+        .text-amber {
+            color: var(--color-amber);
+        }
+        .text-chrome {
+            color: var(--color-chrome);
+        }
+        .text-blue {
+            color: var(--color-electric-blue);
+        }
+        .text-green {
+            color: var(--color-signal-green);
+        }
+        .bg-dark-card {
+            background-color: var(--color-dark-card);
+        }
+        .bg-steel {
+            background-color: var(--color-steel-grey);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            border: 2px solid transparent;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary {
+            background: var(--color-amber);
+            color: #0D0D0F;
+            border-color: var(--color-amber);
+            box-shadow: var(--shadow-amber);
+        }
+        .btn-primary:hover {
+            background: var(--color-amber-dark);
+            border-color: var(--color-amber-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(255, 122, 41, 0.45);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--color-white);
+            border-color: var(--color-chrome);
+        }
+        .btn-outline:hover {
+            background: rgba(201, 205, 211, 0.08);
+            border-color: var(--color-white);
+            transform: translateY(-2px);
+        }
+        .btn-outline-amber {
+            background: transparent;
+            color: var(--color-amber);
+            border-color: var(--color-amber);
+        }
+        .btn-outline-amber:hover {
+            background: rgba(255, 122, 41, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-amber);
+        }
+        .btn-sm {
+            padding: 0.6rem 1.4rem;
+            font-size: 0.85rem;
+        }
+        .btn-lg {
+            padding: 1rem 2.4rem;
+            font-size: 1.05rem;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+            border-color: #25D366;
+            font-weight: 600;
+        }
+        .btn-whatsapp:hover {
+            background: #1ebe5b;
+            border-color: #1ebe5b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 13, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-dark-border);
+            transition: all var(--transition-smooth);
+        }
+        .navbar.scrolled {
+            background: rgba(13, 13, 15, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .navbar-logo {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: -0.03em;
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            z-index: 1001;
+        }
+        .navbar-logo .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--color-amber);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #0D0D0F;
+            font-weight: 900;
+        }
+        .navbar-logo span {
+            color: var(--color-amber);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--color-chrome);
+            transition: all var(--transition-fast);
+            letter-spacing: 0.01em;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav-links a.nav-cta {
+            background: var(--color-amber);
+            color: #0D0D0F;
+            font-weight: 700;
+            padding: 0.6rem 1.4rem;
+        }
+        .nav-links a.nav-cta:hover {
+            background: var(--color-amber-dark);
+            color: #0D0D0F;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 28px;
+            height: 2.5px;
+            background: var(--color-white);
+            border-radius: 2px;
+            transition: all var(--transition-smooth);
+        }
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 13, 15, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            transition: all var(--transition-fast);
+        }
+        .mobile-menu a:hover {
+            color: var(--color-amber);
+            background: rgba(255, 122, 41, 0.08);
+        }
+        .mobile-menu a.mobile-cta {
+            background: var(--color-amber);
+            color: #0D0D0F;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 72px;
+            overflow: hidden;
+            background: var(--color-deep-black);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80vw;
+            height: 80vw;
+            max-width: 900px;
+            max-height: 900px;
+            background: radial-gradient(circle, rgba(255, 122, 41, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 60vw;
+            height: 60vw;
+            max-width: 700px;
+            max-height: 700px;
+            background: radial-gradient(circle, rgba(26, 115, 232, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 122, 41, 0.12);
+            border: 1px solid rgba(255, 122, 41, 0.3);
+            color: var(--color-amber);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+        .hero-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-signal-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.6);
+            }
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 0 12px rgba(46, 204, 113, 0);
+            }
+        }
+        .hero h1 {
+            color: var(--color-white);
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+        }
+        .hero h1 .highlight {
+            color: var(--color-amber);
+            position: relative;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--color-chrome);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 4/3;
+            background: var(--color-dark-card);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--color-dark-border);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1f 0%, #252830 50%, #1a1a1f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .hero-image-placeholder .vehicle-silhouette {
+            font-size: 8rem;
+            opacity: 0.15;
+            color: var(--color-chrome);
+        }
+        .hero-image-placeholder .overlay-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: var(--color-amber);
+            color: #0D0D0F;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            letter-spacing: 0.02em;
+        }
+        .hero-stats-row {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: left;
+        }
+        .hero-stat .stat-number {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--color-white);
+            line-height: 1;
+        }
+        .hero-stat .stat-label {
+            font-size: 0.8rem;
+            color: var(--color-chrome);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .section-header .section-tag {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-amber);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.8rem;
+        }
+        .section-header h2 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            max-width: 550px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Service Path Cards */
+        .service-paths {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .service-path-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .service-path-card:hover {
+            border-color: var(--color-amber);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 122, 41, 0.2);
+        }
+        .service-path-card .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .service-path-card .card-icon.mechanic {
+            background: rgba(255, 122, 41, 0.15);
+            color: var(--color-amber);
+        }
+        .service-path-card .card-icon.detailing {
+            background: rgba(26, 115, 232, 0.15);
+            color: var(--color-electric-blue);
+        }
+        .service-path-card h3 {
+            color: var(--color-white);
+            font-size: 1.4rem;
+        }
+        .service-path-card p {
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        .service-path-card .card-features {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+        .service-path-card .card-features li {
+            font-size: 0.8rem;
+            color: var(--color-chrome-light);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.35rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        .service-path-card .card-link {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--color-amber);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: gap var(--transition-fast);
+        }
+        .service-path-card:hover .card-link {
+            gap: 0.7rem;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--color-dark-card);
+            border-top: 1px solid var(--color-dark-border);
+            border-bottom: 1px solid var(--color-dark-border);
+            padding: 2rem 0;
+        }
+        .trust-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--color-white);
+            font-size: 0.9rem;
+        }
+        .trust-item .trust-icon {
+            font-size: 1.5rem;
+            color: var(--color-amber);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem;
+            transition: all var(--transition-smooth);
+        }
+        .testimonial-card:hover {
+            border-color: var(--color-steel-grey);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .testimonial-card .stars {
+            color: var(--color-amber);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-card .review-text {
+            font-size: 0.9rem;
+            color: var(--color-chrome-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .testimonial-card .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .testimonial-card .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--color-steel-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--color-chrome-light);
+            font-size: 0.85rem;
+        }
+        .testimonial-card .reviewer-name {
+            font-weight: 600;
+            color: var(--color-white);
+            font-size: 0.9rem;
+        }
+        .testimonial-card .reviewer-location {
+            font-size: 0.75rem;
+            color: var(--color-chrome);
+        }
+
+        /* Before/After Gallery */
+        .ba-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .ba-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+        }
+        .ba-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-steel-grey);
+        }
+        .ba-card .ba-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--color-dark-border);
+        }
+        .ba-card .ba-image {
+            aspect-ratio: 4/3;
+            background: var(--color-steel-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--color-chrome);
+            font-weight: 500;
+            position: relative;
+        }
+        .ba-card .ba-image.before {
+            background: #1c1c22;
+        }
+        .ba-card .ba-image.after {
+            background: #1a1f1c;
+        }
+        .ba-card .ba-image .ba-label {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+        .ba-card .ba-image.before .ba-label {
+            background: rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        .ba-card .ba-image.after .ba-label {
+            background: rgba(46, 204, 113, 0.2);
+            color: var(--color-signal-green);
+        }
+        .ba-card .ba-info {
+            padding: 1.2rem 1.5rem;
+        }
+        .ba-card .ba-info h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .ba-card .ba-info p {
+            font-size: 0.8rem;
+            color: var(--color-chrome);
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+            padding: 2rem 1.5rem;
+        }
+        .step-card .step-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--color-amber);
+            color: #0D0D0F;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-amber);
+        }
+        .step-card h4 {
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .step-card p {
+            font-size: 0.85rem;
+        }
+        .steps-connector {
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #141417 0%, #1a1a20 50%, #141417 100%);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-xl);
+            padding: 3.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 122, 41, 0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .cta-section h2 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .cta-section p {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        .cta-section .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--color-dark-card);
+            border-top: 1px solid var(--color-dark-border);
+            padding: 4rem 0 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .footer-brand .footer-logo {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand .footer-logo span {
+            color: var(--color-amber);
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+        }
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-chrome);
+            transition: all var(--transition-fast);
+            font-size: 1rem;
+        }
+        .footer-social a:hover {
+            background: var(--color-amber);
+            color: #0D0D0F;
+        }
+        .footer-col h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .footer-col ul a {
+            font-size: 0.9rem;
+            color: var(--color-chrome);
+            transition: color var(--transition-fast);
+        }
+        .footer-col ul a:hover {
+            color: var(--color-amber);
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--color-dark-border);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--color-chrome);
+        }
+
+        /* Sticky WhatsApp */
+        .sticky-whatsapp {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            border: none;
+        }
+        .sticky-whatsapp:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+        }
+        .sticky-whatsapp .tooltip {
+            position: absolute;
+            right: 68px;
+            background: #fff;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-fast);
+            font-family: var(--font-body);
+            box-shadow: var(--shadow-md);
+        }
+        .sticky-whatsapp:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Booking Form */
+        .booking-form-wrapper {
+            background: var(--color-dark-card);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+        .form-group label {
+            display: block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-white);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all var(--transition-fast);
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-amber);
+            box-shadow: 0 0 0 3px rgba(255, 122, 41, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .form-success.active {
+            display: block;
+        }
+        .form-success .success-icon {
+            font-size: 3rem;
+            color: var(--color-signal-green);
+            margin-bottom: 1rem;
+        }
+        .form-success h3 {
+            color: var(--color-white);
+        }
+
+        /* Page Header (inner pages) */
+        .page-header {
+            padding: 8rem 0 3rem;
+            text-align: center;
+            position: relative;
+        }
+        .page-header h1 {
+            color: var(--color-white);
+            margin-bottom: 0.8rem;
+        }
+        .page-header p {
+            max-width: 550px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .page-header .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--color-chrome);
+            margin-bottom: 1rem;
+        }
+        .page-header .breadcrumb a {
+            color: var(--color-amber);
+        }
+
+        /* Service Areas Grid */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .area-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-smooth);
+        }
+        .area-card:hover {
+            border-color: var(--color-amber);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .area-card h3 {
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .area-card p {
+            font-size: 0.9rem;
+        }
+        .area-card .area-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* About Page */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-image-placeholder {
+            aspect-ratio: 4/3;
+            background: var(--color-dark-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-dark-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--color-steel-grey);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .gallery-item {
+            aspect-ratio: 1;
+            background: var(--color-dark-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-dark-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--color-steel-grey);
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .gallery-item:hover {
+            border-color: var(--color-amber);
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Blog Cards */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .blog-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-steel-grey);
+        }
+        .blog-card .blog-image {
+            aspect-ratio: 16/10;
+            background: var(--color-steel-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.1);
+        }
+        .blog-card .blog-content {
+            padding: 1.5rem;
+        }
+        .blog-card .blog-date {
+            font-size: 0.75rem;
+            color: var(--color-amber);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .blog-card h3 {
+            color: var(--color-white);
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .blog-card p {
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.7s ease forwards;
+        }
+        .animate-delay-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+        .animate-delay-2 {
+            animation-delay: 0.25s;
+            opacity: 0;
+        }
+        .animate-delay-3 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+        .animate-delay-4 {
+            animation-delay: 0.55s;
+            opacity: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+                order: 2;
+            }
+            .hero-visual {
+                order: 1;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            .hero-subtitle {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-stats-row {
+                justify-content: center;
+            }
+            .hero-stat {
+                text-align: center;
+            }
+            .service-paths {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .areas-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .ba-gallery {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-bar .container {
+                gap: 1.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .cta-section {
+                padding: 2.5rem 1.5rem;
+            }
+            .booking-form-wrapper {
+                padding: 1.5rem;
+            }
+            .section-padding {
+                padding: 3rem 0;
+            }
+            .section-padding-lg {
+                padding: 4rem 0;
+            }
+            .page-header {
+                padding: 6rem 0 2rem;
+            }
+            .navbar .container {
+                height: 60px;
+            }
+            .navbar-logo {
+                font-size: 1.3rem;
+            }
+            .navbar-logo .logo-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="#" class="navbar-logo" aria-label="KF Garage Home">
+                <div class="logo-icon">KF</div>
+                KF<span>Garage</span>
+            </a>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" class="active">Home</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="#areas" role="menuitem">Service Areas</a></li>
+                <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#book" role="menuitem" class="nav-cta">Book Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#areas">Service Areas</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#book" class="mobile-cta">Book Now</a>
+        <a href="https://wa.me/254700000000" target="_blank" rel="noopener" style="color:#25D366;">WhatsApp Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="home">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content animate-fade-in-up">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span> Now Serving All Nairobi Suburbs
+                    </div>
+                    <h1 id="hero-heading">Your <span class="highlight">Mobile Garage</span> — We Come to You</h1>
+                    <p class="hero-subtitle">
+                        Professional vehicle repair, maintenance & premium detailing at your home, office, or preferred
+                        location in Nairobi. No more garage visits — we bring the workshop to your doorstep.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#book" class="btn btn-primary btn-lg">📅 Book a Mechanic</a>
+                        <a href="#book" class="btn btn-outline btn-lg">✨ Book a Detail</a>
+                    </div>
+                    <div class="hero-stats-row">
+                        <div class="hero-stat">
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label">Cars Serviced</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years in Business</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual animate-fade-in-up animate-delay-2">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-placeholder">
+                            <span class="vehicle-silhouette">🚐</span>
+                            <div class="overlay-badge">⚡ Mobile Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar" aria-label="Trust indicators">
+            <div class="container">
+                <div class="trust-item"><span class="trust-icon">✅</span> Licensed & Insured</div>
+                <div class="trust-item"><span class="trust-icon">⭐</span> 4.9 / 5 Google Rating</div>
+                <div class="trust-item"><span class="trust-icon">🔧</span> Certified Technicians</div>
+                <div class="trust-item"><span class="trust-icon">⏱️</span> Same-Day Service</div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="section-padding" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Our Services</span>
+                    <h2 id="services-heading">Two Ways We Serve You</h2>
+                    <p>Choose between expert mobile mechanic services or premium car detailing — both delivered wherever
+                        you are in Nairobi.</p>
+                </div>
+                <div class="service-paths">
+                    <a href="#mechanic-services" class="service-path-card animate-fade-in-up animate-delay-1">
+                        <div class="card-icon mechanic">🔧</div>
+                        <h3>Mobile Mechanic</h3>
+                        <p>Full vehicle diagnostics, repairs, servicing & maintenance — all performed at your location by
+                            certified technicians with professional equipment.</p>
+                        <ul class="card-features">
+                            <li>Engine Diagnostics</li>
+                            <li>Brake Service</li>
+                            <li>Oil Change</li>
+                            <li>Battery & Electrical</li>
+                            <li>General Servicing</li>
+                        </ul>
+                        <span class="card-link">Learn More →</span>
+                    </a>
+                    <a href="#detailing-services" class="service-path-card animate-fade-in-up animate-delay-2">
+                        <div class="card-icon detailing">✨</div>
+                        <h3>Wash & Detailing</h3>
+                        <p>From standard mobile car washes to premium luxury detailing packages — we restore your
+                            vehicle's showroom shine with meticulous care.</p>
+                        <ul class="card-features">
+                            <li>Standard Wash</li>
+                            <li>Full Detail</li>
+                            <li>Luxury/Exotic Package</li>
+                            <li>Interior Deep Clean</li>
+                            <li>Ceramic Coating</li>
+                        </ul>
+                        <span class="card-link">Learn More →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanic Services Detail -->
+        <section class="section-padding bg-dark-card" id="mechanic-services" aria-labelledby="mechanic-heading"
+            style="background-color: var(--color-dark-card);">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Mobile Mechanic</span>
+                    <h2 id="mechanic-heading">Expert Repairs, Where You Are</h2>
+                    <p>Our certified mobile mechanics handle everything from diagnostics to major repairs — no need to
+                        visit a physical garage.</p>
+                </div>
+                <div class="service-paths" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="service-path-card animate-fade-in-up animate-delay-1">
+                        <div class="card-icon mechanic">🔍</div>
+                        <h3>Diagnostics</h3>
+                        <p>Advanced onboard diagnostics for all vehicle makes & models. We identify issues fast with
+                            professional-grade scanning tools.</p>
+                    </div>
+                    <div class="service-path-card animate-fade-in-up animate-delay-2">
+                        <div class="card-icon mechanic">🛑</div>
+                        <h3>Brake Service</h3>
+                        <p>Complete brake inspection, pad replacement, rotor resurfacing — ensuring your safety on
+                            Nairobi roads.</p>
+                    </div>
+                    <div class="service-path-card animate-fade-in-up animate-delay-3">
+                        <div class="card-icon mechanic">🔋</div>
+                        <h3>Battery & Electrical</h3>
+                        <p>Battery testing, replacement, alternator checks, and electrical system troubleshooting at your
+                            doorstep.</p>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="#book" class="btn btn-primary btn-lg">Get a Quote →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailing Services Detail -->
+        <section class="section-padding" id="detailing-services" aria-labelledby="detailing-heading">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Wash & Detailing</span>
+                    <h2 id="detailing-heading">Premium Car Detailing, Mobile</h2>
+                    <p>From quick washes to full luxury detailing — we treat every vehicle like it's our own.</p>
+                </div>
+                <div class="service-paths" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="service-path-card animate-fade-in-up animate-delay-1">
+                        <div class="card-icon detailing">🚿</div>
+                        <h3>Standard Wash</h3>
+                        <p>Thorough exterior hand wash, wheel cleaning, tire shine & glass cleaning — all at your
+                            location.</p>
+                    </div>
+                    <div class="service-path-card animate-fade-in-up animate-delay-2">
+                        <div class="card-icon detailing">💎</div>
+                        <h3>Full Detail</h3>
+                        <p>Complete interior & exterior detailing: shampoo, leather treatment, paint decontamination &
+                            polish.</p>
+                    </div>
+                    <div class="service-path-card animate-fade-in-up animate-delay-3">
+                        <div class="card-icon detailing">👑</div>
+                        <h3>Luxury / Exotic</h3>
+                        <p>Premium care for high-end vehicles: ceramic coating, paint correction, concours-level
+                            finishing for luxury & exotic cars.</p>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="#book" class="btn btn-outline-amber btn-lg">Book a Detail →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before/After Gallery -->
+        <section class="section-padding bg-dark-card" id="gallery" aria-labelledby="gallery-heading"
+            style="background-color: var(--color-dark-card);">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Our Work</span>
+                    <h2 id="gallery-heading">Before & After Transformations</h2>
+                    <p>Real results from our mobile detailing services across Nairobi.</p>
+                </div>
+                <div class="ba-gallery">
+                    <div class="ba-card animate-fade-in-up animate-delay-1">
+                        <div class="ba-images">
+                            <div class="ba-image before"><span class="ba-label">Before</span>🚗</div>
+                            <div class="ba-image after"><span class="ba-label">After</span>✨🚗</div>
+                        </div>
+                        <div class="ba-info">
+                            <h4>Luxury SUV Full Detail — Karen</h4>
+                            <p>Complete interior & exterior restoration with ceramic coating</p>
+                        </div>
+                    </div>
+                    <div class="ba-card animate-fade-in-up animate-delay-2">
+                        <div class="ba-images">
+                            <div class="ba-image before"><span class="ba-label">Before</span>🚙</div>
+                            <div class="ba-image after"><span class="ba-label">After</span>✨🚙</div>
+                        </div>
+                        <div class="ba-info">
+                            <h4>Interior Deep Clean — Westlands</h4>
+                            <p>Full interior shampoo, leather conditioning & odor removal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section-padding" id="how-it-works" aria-labelledby="how-heading">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">How It Works</span>
+                    <h2 id="how-heading">Simple 4-Step Process</h2>
+                    <p>Booking your mobile mechanic or detailing service is quick and easy.</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card animate-fade-in-up animate-delay-1">
+                        <div class="step-number">1</div>
+                        <h4>📅 Book Online</h4>
+                        <p>Fill our quick booking form or WhatsApp us with your service needs, preferred date & location.
+                        </p>
+                    </div>
+                    <div class="step-card animate-fade-in-up animate-delay-2">
+                        <div class="step-number">2</div>
+                        <h4>🚐 We Come to You</h4>
+                        <p>Our mobile unit arrives at your home, office, or chosen location — fully equipped and on time.
+                        </p>
+                    </div>
+                    <div class="step-card animate-fade-in-up animate-delay-3">
+                        <div class="step-number">3</div>
+                        <h4>🔧 Service Completed</h4>
+                        <p>Our certified technicians perform the work efficiently with professional-grade tools &
+                            products.</p>
+                    </div>
+                    <div class="step-card animate-fade-in-up animate-delay-4">
+                        <div class="step-number">4</div>
+                        <h4>💳 Pay & Rate</h4>
+                        <p>Pay securely via M-Pesa or card, and rate your experience. We value your feedback!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section-padding bg-dark-card" aria-labelledby="testimonials-heading"
+            style="background-color: var(--color-dark-card);">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Testimonials</span>
+                    <h2 id="testimonials-heading">What Our Clients Say</h2>
+                    <p>Trusted by car owners across Nairobi — read real reviews from real customers.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-fade-in-up animate-delay-1">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"KF Garage saved my week! My car broke down in Westlands and they were at
+                            my office within 45 minutes. Professional, fast, and fairly priced. Highly recommend their
+                            mobile mechanic service."</p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">JM</div>
+                            <div>
+                                <div class="reviewer-name">James M.</div>
+                                <div class="reviewer-location">Westlands, Nairobi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-fade-in-up animate-delay-2">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"The detailing on my Range Rover was exceptional. They came to my home in
+                            Karen and spent 4 hours — the car looks better than when I bought it. True professionals."</p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">SN</div>
+                            <div>
+                                <div class="reviewer-name">Sarah N.</div>
+                                <div class="reviewer-location">Karen, Nairobi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-fade-in-up animate-delay-3">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"I've used KF Garage three times now for servicing my fleet vehicles on
+                            Mombasa Road. Consistent quality, always on time, and the WhatsApp booking is super
+                            convenient."</p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">PK</div>
+                            <div>
+                                <div class="reviewer-name">Peter K.</div>
+                                <div class="reviewer-location">Mombasa Road, Nairobi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Areas -->
+        <section class="section-padding" id="areas" aria-labelledby="areas-heading">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Service Areas</span>
+                    <h2 id="areas-heading">Where We Operate</h2>
+                    <p>KF Garage serves all of Nairobi and its suburbs — with a primary focus on these key areas.</p>
+                </div>
+                <div class="areas-grid">
+                    <div class="area-card animate-fade-in-up animate-delay-1">
+                        <div class="area-icon">🏢</div>
+                        <h3>Westlands</h3>
+                        <p>Mobile mechanic and detailing services for residential and commercial clients in Westlands —
+                            from Parklands to Mpaka Road. Fast response times for office park bookings.</p>
+                    </div>
+                    <div class="area-card animate-fade-in-up animate-delay-2">
+                        <div class="area-icon">🌳</div>
+                        <h3>Karen</h3>
+                        <p>Premium mobile detailing and mechanic services in Karen — we specialize in luxury vehicle care
+                            for Karen's discerning residents. Discreet, professional, and meticulous.</p>
+                    </div>
+                    <div class="area-card animate-fade-in-up animate-delay-3">
+                        <div class="area-icon">🏡</div>
+                        <h3>Kitusuru</h3>
+                        <p>Full mobile garage services in Kitusuru and surrounding areas. We bring the workshop to your
+                            compound — convenient, reliable, and trusted by Kitusuru families.</p>
+                    </div>
+                    <div class="area-card animate-fade-in-up animate-delay-4">
+                        <div class="area-icon">🛣️</div>
+                        <h3>Mombasa Road</h3>
+                        <p>Mobile mechanic services along the Mombasa Road corridor — ideal for businesses, fleet
+                            vehicles, and residents in South B, South C, and Industrial Area.</p>
+                    </div>
+                </div>
+                <p style="text-align:center; margin-top:2rem; color:var(--color-chrome);">
+                    📍 And all other Nairobi suburbs — <a href="#book" style="color:var(--color-amber);">contact us</a>
+                    to confirm availability in your area.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-padding" aria-labelledby="cta-heading">
+            <div class="container">
+                <div class="cta-section animate-fade-in-up">
+                    <h2 id="cta-heading">Ready to Experience the KF Garage Difference?</h2>
+                    <p>Book your mobile mechanic or detailing service now — we'll be at your doorstep in no time.</p>
+                    <div class="cta-buttons">
+                        <a href="#book" class="btn btn-primary btn-lg">📅 Book Your Service</a>
+                        <a href="https://wa.me/254700000000" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">💬 WhatsApp Quick Book</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="section-padding bg-dark-card" id="book" aria-labelledby="booking-heading"
+            style="background-color: var(--color-dark-card);">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Book Now</span>
+                    <h2 id="booking-heading">Schedule Your Service</h2>
+                    <p>Fill out the form below and we'll confirm your booking within minutes.</p>
+                </div>
+                <div class="booking-form-wrapper animate-fade-in-up animate-delay-1">
+                    <form id="bookingForm" aria-label="Booking form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="e.g. Jane Muthoni">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="e.g. 0712 345 678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location / Address *</label>
+                            <input type="text" id="location" name="location" required placeholder="e.g. Westlands, Mpaka Road, Office Park">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicleMake">Vehicle Make & Model *</label>
+                                <input type="text" id="vehicleMake" name="vehicleMake" required placeholder="e.g. Toyota Prado">
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceType">Service Type *</label>
+                                <select id="serviceType" name="serviceType" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="mobile-mechanic">Mobile Mechanic</option>
+                                    <option value="standard-wash">Standard Car Wash</option>
+                                    <option value="full-detail">Full Detailing</option>
+                                    <option value="luxury-detail">Luxury / Exotic Detailing</option>
+                                    <option value="ceramic-coating">Ceramic Coating</option>
+                                    <option value="other">Other / Not Sure</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date *</label>
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time</label>
+                                <select id="preferredTime" name="preferredTime">
+                                    <option value="">Any time</option>
+                                    <option value="morning">Morning (8AM–12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM–4PM)</option>
+                                    <option value="evening">Evening (4PM–6PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes" placeholder="Any specific requests or details about your vehicle..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">📅 Submit Booking</button>
+                        <p style="text-align:center; margin-top:1rem; font-size:0.85rem; color:var(--color-chrome);">
+                            Or <a href="https://wa.me/254700000000" target="_blank" rel="noopener" style="color:#25D366;font-weight:600;">book instantly via WhatsApp →</a>
+                        </p>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">✅</div>
+                        <h3>Booking Submitted Successfully!</h3>
+                        <p>We'll confirm your appointment via phone or WhatsApp shortly. Thank you for choosing KF Garage!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section-padding" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-placeholder animate-fade-in-up">
+                        👨‍🔧
+                    </div>
+                    <div class="animate-fade-in-up animate-delay-2">
+                        <span class="section-tag">About Us</span>
+                        <h2 id="about-heading" style="color:var(--color-white); margin-bottom:1rem;">Nairobi's Trusted Mobile Garage</h2>
+                        <p style="margin-bottom:1rem;">KF Garage was founded with a simple mission: to make vehicle care
+                            convenient, transparent, and professional for Nairobi's car owners. We saw the frustration of
+                            taking cars to physical garages — the waiting, the uncertainty, the disruption to your day —
+                            and we knew there was a better way.</p>
+                        <p style="margin-bottom:1rem;">Our team of certified technicians brings decades of combined
+                            experience to every job. We invest in the best diagnostic tools, quality parts, and premium
+                            detailing products because your car deserves nothing less.</p>
+                        <p>Whether you need an emergency repair in Westlands, a full service in Kitusuru, or a luxury
+                            detail in Karen — KF Garage is just a booking away.</p>
+                        <div style="margin-top:1.5rem;">
+                            <a href="#book" class="btn btn-primary">Book Your Service →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / Insights -->
+        <section class="section-padding bg-dark-card" aria-labelledby="blog-heading"
+            style="background-color: var(--color-dark-card);">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <span class="section-tag">Insights</span>
+                    <h2 id="blog-heading">Car Care Tips & News</h2>
+                    <p>Expert advice from the KF Garage team to keep your vehicle in top condition.</p>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card animate-fade-in-up animate-delay-1">
+                        <div class="blog-image">📝</div>
+                        <div class="blog-content">
+                            <span class="blog-date">March 2025</span>
+                            <h3>Why Mobile Mechanics Are Changing Car Care in Nairobi</h3>
+                            <p>Discover how on-demand mobile garage services are transforming vehicle maintenance for
+                                busy Nairobi professionals.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card animate-fade-in-up animate-delay-2">
+                        <div class="blog-image">🚘</div>
+                        <div class="blog-content">
+                            <span class="blog-date">February 2025</span>
+                            <h3>5 Signs Your Brakes Need Immediate Attention</h3>
+                            <p>Don't ignore these warning signs — your safety on Nairobi's roads depends on well-maintained
+                                brakes.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card animate-fade-in-up animate-delay-3">
+                        <div class="blog-image">✨</div>
+                        <div class="blog-content">
+                            <span class="blog-date">January 2025</span>
+                            <h3>Ceramic Coating vs. Wax: What's Best for Your Car?</h3>
+                            <p>Learn the differences and find out which paint protection option is right for your vehicle
+                                in Kenya's climate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">KF<span>Garage</span></div>
+                    <p>Nairobi's #1 mobile garage — professional mechanic services & premium car detailing at your
+                        doorstep.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                        <a href="#" aria-label="Twitter / X">𝕏</a>
+                        <a href="#" aria-label="TikTok">tt</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#mechanic-services">Mobile Mechanic</a></li>
+                        <li><a href="#detailing-services">Car Detailing</a></li>
+                        <li><a href="#detailing-services">Luxury Detailing</a></li>
+                        <li><a href="#detailing-services">Ceramic Coating</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li><a href="#areas">Westlands</a></li>
+                        <li><a href="#areas">Karen</a></li>
+                        <li><a href="#areas">Kitusuru</a></li>
+                        <li><a href="#areas">Mombasa Road</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+254700000000">📞 0700 000 000</a></li>
+                        <li><a href="https://wa.me/254700000000">💬 WhatsApp</a></li>
+                        <li><a href="mailto:info@kfgarage.co.ke">✉️ info@kfgarage.co.ke</a></li>
+                        <li>📍 Nairobi, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 KF Garage. All rights reserved.</span>
+                <span>Proudly serving Nairobi & suburbs</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/254700000000" target="_blank" rel="noopener" class="sticky-whatsapp" aria-label="Chat on WhatsApp">
+        <span class="tooltip">Quick Book via WhatsApp</span>
+        💬
+    </a>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AutoRepair",
+            "name": "KF Garage",
+            "description": "Mobile garage and car care company in Nairobi offering on-demand vehicle repair, maintenance, and premium detailing at customers' locations.",
+            "telephone": "+254700000000",
+            "email": "info@kfgarage.co.ke",
+            "url": "https://kfgarage.co.ke",
+            "areaServed": [
+                "Westlands",
+                "Karen",
+                "Kitusuru",
+                "Mombasa Road",
+                "Nairobi"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nairobi",
+                "addressCountry": "KE"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "280"
+            },
+            "openingHours": "Mo-Sa 08:00-18:00"
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = mobileMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = navbar.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                        navHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function updateActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+            if (!current && window.pageYOffset < 300) {
+                navLinks[0].classList.add('active');
+            }
+        }
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Booking form submission
+        const bookingForm = document.getElementById('bookingForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(bookingForm);
+            const data = Object.fromEntries(formData.entries());
+
+            // Simulate submission (in production, send to webhook/API)
+            console.log('Booking submitted:', data);
+
+            // Show success
+            bookingForm.style.display = 'none';
+            formSuccess.classList.add('active');
+
+            // Optional: Send to WhatsApp as fallback
+            const waMessage =
+                `Hello KF Garage! I'd like to book:%0A%0A*Name:* ${data.fullName}%0A*Phone:* ${data.phone}%0A*Location:* ${data.location}%0A*Vehicle:* ${data.vehicleMake}%0A*Service:* ${data.serviceType}%0A*Date:* ${data.preferredDate}%0A*Time:* ${data.preferredTime || 'Any'}%0A*Notes:* ${data.notes || 'None'}`;
+            const waLink = `https://wa.me/254700000000?text=${waMessage}`;
+
+            // After 2 seconds, offer WhatsApp backup
+            setTimeout(() => {
+                const waPrompt = document.createElement('p');
+                waPrompt.style.textAlign = 'center';
+                waPrompt.style.marginTop = '1rem';
+                waPrompt.innerHTML =
+                    `<a href="${waLink}" target="_blank" rel="noopener" style="color:#25D366;font-weight:600;">📲 Also send via WhatsApp for faster confirmation →</a>`;
+                formSuccess.appendChild(waPrompt);
+            }, 2000);
+        });
+
+        // Set minimum date for booking to today
+        const dateInput = document.getElementById('preferredDate');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fade-in-up, .animate-delay-1, .animate-delay-2, .animate-delay-3, .animate-delay-4')
+            .forEach(el => {
+                observer.observe(el);
+            });
+
+        console.log('🚐 KF Garage — Mobile Garage & Detailing Nairobi');
+        console.log('📅 Ready to serve you in Westlands, Karen, Kitusuru & Mombasa Road');
+        console.log('💬 Book via the form above or WhatsApp us!');
+    </script>
+</body>
+</html>
